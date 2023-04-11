@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <title>Delete contact</title>
+    <style>table th,td {border: 1px solid black;}
+    </style>
+    <body>
+        {{str3}}<br>
+        <table style="width:50% ;">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Mobile Number</th>
+                  <th>City</th>
+                  <th>Profession</th>
+                  <th>User id</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for row in l2 %}
+              <tr>
+                  <td>{{row['id']}}</td>
+                  <td>{{row['name']}}</td>
+                  <td>{{row['phN']}}</td>
+                  <td>{{row['city']}}</td>
+                  <td>{{row['prof']}}</td>
+                  <td>{{row['u_id']}}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+        <form action="/del" method="POST">
+            <label >Enter name of the contact you want to delete</label><br>
+            <input type="text" name="name" required><br>
+            <label>Delete</label><br>
+            <input type="submit" name="submitt" required><br>
+        </form>
+    </body>
+</html>
